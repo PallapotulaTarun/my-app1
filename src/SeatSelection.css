@@ -1,0 +1,186 @@
+.seat-selection-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.category-selector {
+  margin-bottom: 20px;
+}
+
+.category-selector span {
+  font-weight: bold;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-gap: 10px;
+  max-width: 850px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+}
+
+/* ... (other CSS rules) */
+
+.seat {
+  padding: 15px; /* Increase the padding to increase the size */
+  border: 2px solid #ee1515;
+  background-color: #fdf8f8; /* Default seat color */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 7px; /* Increase the font size */
+  border-radius: 25px 25px 5px 5px; /* Apply border-radius to the top corners */
+}
+
+
+/* ... (other CSS rules) */
+
+
+
+.seat.selected {
+  background-color: #4caf50; /* Selected seat color */
+  color: white;
+  border-color: #4caf50;
+}
+
+.seat.booked {
+  background-color: #f44336; /* Booked seat color */
+  color: white;
+  cursor: not-allowed;
+  border-color: #f44336;
+}
+
+.row-heading {
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.selected-seats {
+  margin-top: 20px;
+}
+
+.selected-seats h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.selected-seats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-seats li {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.header {
+  background-color: #ff0000; /* Red background color */
+  color: white; /* White text color */
+  padding: 10px 0; /* Adjust padding as needed */
+}
+
+
+/* Add a red footer background */
+.footer {
+  background-color: #ff0000; /* Red background color */
+  color: white; /* White text color */
+  padding: 10px 0; /* Adjust padding as needed */
+}
+/* CSS to hide non-printable elements */
+@media print {
+body * {
+  visibility: hidden;
+}
+.ticket-details,
+.ticket-details * {
+  visibility: visible;
+}
+.ticket-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+}
+
+/* Additional CSS for ticket formatting */
+.ticket-details {
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+max-width: 400px;
+margin: 0 auto;
+text-align: center;
+}
+
+.ticket-details h2 {
+font-size: 24px;
+margin-bottom: 10px;
+color: #333;
+}
+
+.ticket-details p {
+font-size: 16px;
+margin: 10px 0;
+color: #555;
+}
+
+.ticket-details ul {
+list-style: none;
+padding: 0;
+}
+
+.ticket-details li {
+font-size: 14px;
+margin: 5px 0;
+}
+
+.print-button {
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 20px;
+border-radius: 5px;
+}
+
+.print-button:hover {
+background-color: #0056b3;
+}
+
+
+
+
+/* Define other print-specific styles as needed */
+.next-button {
+background-color: #00cc00; /* Green color */
+color: #fff; /* Text color */
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 20px;
+border-radius: 5px;
+}
+
+.next-button:hover {
+background-color: #009900; /* Darker green color on hover */
+}

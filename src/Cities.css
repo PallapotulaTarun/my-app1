@@ -1,0 +1,87 @@
+/* Center the city blocks horizontally and vertically in each row */
+.city-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Style for each city block */
+.city-block {
+  flex-basis: calc(25% - 8px);
+  text-align: center;
+  margin: 10px;
+}
+
+/* Style for the city block content (including hover effect) */
+.city-button {
+  display: block;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 50px;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s; /* Add hover transition */
+
+  /* Hover effect for city blocks */
+  &:hover {
+    background-color: #e63946; /* Change background color on hover */
+    border-color: #e63946; /* Change border color on hover */
+    transform: scale(1.05); /* Scale the block on hover */
+  }
+}
+
+.city-row {
+    display: flex;
+    justify-content: center; /* Center the city blocks horizontally */
+    align-items: center; /* Center the city blocks vertically */
+    flex-wrap: wrap; /* Allow city blocks to wrap to the next row if needed */
+    margin-bottom: 20px;
+  }
+  
+  .city-block {
+    border: 1px solid black;
+    padding: 10px;
+    
+    flex-basis: calc(25% - 8px);
+    text-align: center;
+    border-radius: 50px;
+    margin: 10px; /* Add margin to create space between city blocks */
+  }
+  
+  /* Add a hover effect to the city blocks */
+  .city-block:hover {
+    background-color: #e63946;
+    border-color: #e63946;
+    transform: scale(1.05);
+  }
+  .get-started-button {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Style for the "Get Started" button */
+  .get-started-btn {
+    background-color: #9d9da1; /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 18px; /* Increase font size for a larger button */
+    border: none; /* Remove button border */
+    border-radius: 30px; /* Add rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Add hover transition */
+  }
+  
+  /* Hover effect for the "Get Started" button */
+  .get-started-btn:hover {
+    background-color: #e63946; /* Change background color on hover */
+    transform: scale(1.05); /* Scale the button on hover */
+  }
+  /* Add a class for the clicked city */
+.city-button.clicked {
+  background-color: #e63946;
+  border-color: #e63946;
+  transform: scale(1.05);
+}
+
+  
+  

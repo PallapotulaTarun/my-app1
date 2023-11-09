@@ -1,0 +1,101 @@
+.signup{
+  display: flex;
+}
+
+.img-signup{
+  width: 30%;
+  height: 40%;
+  margin-right: 70px;
+}
+
+.register-form-container{
+  background-color: rgba(252, 248, 248, 0.8); /* add a semi-transparent white background to the login form */
+  width: 350px;
+  margin-left: 60px;
+  border-radius: 15px;
+  padding: 10px 50px 50px 50px;
+  box-shadow:
+  0px 0.1px 2.2px rgba(0, 0, 0, 0.02),
+  0px 0.3px 5.3px rgba(0, 0, 0, 0.028),
+  0px 0.6px 10px rgba(0, 0, 0, 0.035),
+  0px 1.1px 17.9px rgba(0, 0, 0, 0.042),
+  0px 2.1px 33.4px rgba(0, 0, 0, 0.05),
+  0px 5px 80px rgba(0, 0, 0, 0.07);
+}
+
+.form-css{
+  color: #555;
+}
+input::placeholder{
+  font-size: 13px;
+  font-style: normal;
+}
+
+.signup{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 60px;
+    margin-bottom: 115px;
+}
+
+label{
+ 
+  color: #555;
+}
+
+
+.register-form-container input[type='email'],
+  .register-form-container input[type='password'] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    
+    
+  }
+
+ .register-form-container button[type='submit'] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    
+  }
+  .register-form-container button[type='submit']:hover {
+    color: #e63946;
+    background-color: #f1faee;
+    border-color: #e63946;
+    border: solid;
+    height: 43px;
+  }
+
+  .already-user-css{
+    font-size: 14px;
+    color: #555;
+  }
+
+  .already-user-css:hover{
+    text-decoration: none;
+    color: #555;
+    
+  }
+
+  .form-css h2{
+    color: #555;
+    text-align: center;
+    padding:20px 0 15px 0;
+  }
+
+  
