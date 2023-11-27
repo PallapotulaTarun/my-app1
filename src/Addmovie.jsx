@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import './Addmovie.css';
+
 
 const AddMovie = () => {
 

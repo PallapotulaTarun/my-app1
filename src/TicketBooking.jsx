@@ -128,7 +128,7 @@ const SeatSelection = () => {
         
           <h3>ChalCinema </h3>
       </div>
-      <li className="right-btn"><NavLink className="navbar-band" to="/Home" style={{color:"#495057",paddingTop:"10px"}}>Logout</NavLink></li>
+      <li className="right-btn"><NavLink className="navbar-band" to="/Home" style={{color:"#495057",paddingTop:"0px"}}>Logout</NavLink></li>
       
 
       <div className="seat-selection-container">
@@ -173,7 +173,7 @@ const SeatSelection = () => {
               {showSeatNumbers[seat.id] && `${seat.row}-${seat.seatNumber}`}
               {selectedSeats.includes(seat.id) && (
                 <div className="seat-price">
-                  ${categoryPrices[seat.category]}
+                  {categoryPrices[seat.category]}
                 </div>
               )}
             </div>
@@ -186,13 +186,13 @@ const SeatSelection = () => {
               const selectedSeat = seatData.find((seat) => seat.id === seatId);
               return (
                 <li key={index}>
-                  {selectedSeat.row}-{selectedSeat.seatNumber} ({selectedSeat.category}) - ${categoryPrices[selectedSeat.category]}
+                  {selectedSeat.row}-{selectedSeat.seatNumber} ({selectedSeat.category}) - {categoryPrices[selectedSeat.category]}
                 </li>
               );
             })}
           </ul>
           <div className="total-amount">
-            Total Amount: ${totalAmount}
+            Total Amount: {totalAmount}
           </div>
         </div>
 
@@ -261,12 +261,12 @@ const SeatSelection = () => {
                 return (
                   <li key={index}>
                     Seat: {selectedSeat.row}-{selectedSeat.seatNumber} ({selectedSeat.category})
-                    Price: ${categoryPrices[selectedSeat.category]}
+                    Price: {categoryPrices[selectedSeat.category]}
                   </li>
                 );
               })}
             </ul>
-            <p>Total Amount: ${totalAmount}</p>
+            <p>Total Amount: {totalAmount}</p>
             
           </div>
         )}
