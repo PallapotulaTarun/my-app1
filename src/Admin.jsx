@@ -23,10 +23,10 @@ export default function Admin() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    // Check if the provided email and password match the default credentials
+    
     if (email === "Tarun@gmail.com" && password === "Tarun@123") {
       setLoggedIn(true);
-      setErrorMessage("");
+      setErrorMessage("Success");
     } else {
       setLoggedIn(false);
       setErrorMessage("Invalid email or password. Please try again.");

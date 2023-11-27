@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import { BsSearch } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -26,25 +26,8 @@ const images = [
 ];
 
 function Home() {
-  const [showFlash, setShowFlash] = useState(true);
-
-  useEffect(() => {
-    const flashTimer = setTimeout(() => {
-      setShowFlash(false);
-    }, 0.500); // Flash effect for 2 seconds
-
-    return () => {
-      clearTimeout(flashTimer);
-    };
-  }, []);
-
   return (
-    <div>
-      {showFlash ? (
-        <div className="flash-container">
-          <image src="E:\Hexaware dot net training\React Demos\my-app\src\Images\image14.jpg" alt="Flash Image" />
-        </div>
-      ) : (
+     
         <div>
           <div>
             <nav className="navbar navbar-default">
@@ -62,7 +45,7 @@ function Home() {
                   <NavLink
                     className="navbar-band"
                     to="/LoginForm"
-                    style={{ color: "#495057", paddingTop: "10px" }}
+                    style={{ color: "#495057", paddingTop: "10px", }}
                   >
                     Login
                   </NavLink>
@@ -77,23 +60,8 @@ function Home() {
                     Admin
                   </NavLink>
                 </li>
-                <li className="rrr">
-                  <NavLink
-                    className="navbar-band"
-                    to="/Cities"
-                    style={{ paddingRight: "0px" }}
-                  >
-                    Location
-                  </NavLink>
-                  <FaMapMarkerAlt
-                    style={{
-                      background: "none",
-                      color: "#e9ecef",
-                      paddingLeft: "0px",
-                    }}
-                    className="search-icon"
-                  />
-                </li>
+                
+                
               </ul>
             </nav>
           </div>
@@ -108,6 +76,7 @@ function Home() {
               navStyle={1}
             />
           </div>
+
           <div className="recommended">
             <h4>Upcoming Movies</h4>
             <div className="recom-img">
@@ -175,8 +144,8 @@ function Home() {
             </p>
           </div>
         </div>
-      )}
-    </div>
+      
+  
   );
 }
 

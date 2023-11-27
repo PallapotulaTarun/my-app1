@@ -5,10 +5,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import {NavLink} from "react-router-dom";
-
-// import { Link } from "react-router-dom";
 import MovieDisplay from "./Movies1";
-
 
 let url = "https://localhost:44360/api/Movie"
 export class Movie extends Component{
@@ -25,7 +22,7 @@ return(
         <div>
             <nav className="navbar navbar-default">
                 <ul>  
-                    <li><NavLink className="navbar-band" to="/home">Chalo Cinema</NavLink></li>
+                    <li><NavLink className="navbar-band" to="/home">ChalCinema</NavLink></li>
                     <li class="wrapper">
                         <input class="search-input" placeholder="search"></input> 
                         <BsSearch className="search-icon"/>

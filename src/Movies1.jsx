@@ -18,7 +18,6 @@ const MovieDisplay = ({ listdata }) => {
               <h4>{Movie.movieName}</h4>
               <div className="card-flex">
               <p style={{paddingRight:"40px"}}>Theatre:{Movie.theatreName}</p>
-              <p style={{paddingLeft:"40px"}}>Price: {Movie.charges}</p>
               </div>
               <div className="card-flex">
               <p style={{paddingRight:"30px"}}>Location: {Movie.location}</p>

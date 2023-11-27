@@ -76,7 +76,7 @@ const MovieDisplay = () => {
   const handleAddMovie = () => {
     setShowModal(true); // Show the modal when Add Movie is clicked
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -101,9 +101,9 @@ const MovieDisplay = () => {
             rating: "",
             image: "",
           });
-          // Close the modal
+          
           setShowModal(false);
-          // Fetch the updated movie list from your API and update the state
+          
           fetch("https://localhost:44360/api/Movie")
             .then((res) => res.json())
             .then((data) => setListData(data))
@@ -111,7 +111,7 @@ const MovieDisplay = () => {
               console.error("Error fetching movies:", error);
             });
         } else {
-          // Handle error here (e.g., show an error message)
+          
           console.error('Error adding movie:', response.status);
         }
       })
@@ -128,7 +128,7 @@ const MovieDisplay = () => {
   return (
     <div>
       {renderdata()}
-      <button className="add-movie-btn" onClick={handleAddMovie}>
+      <button className="btn-btn-primary"  onClick={handleAddMovie}>
         Add Movie
       </button>
       {showModal && (

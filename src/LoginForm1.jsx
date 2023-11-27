@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BsSearch } from "react-icons/bs";
 import {NavLink} from "react-router-dom";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
@@ -43,6 +42,7 @@ function LoginForm() {
         if (response.ok) {
           // If the login is successful, set loggedIn to true
           setLoggedIn(true);
+          localStorage.setItem("user",JSON.stringify());
         } else {
           // If the login fails, display an error message
           setError('Invalid email or password');
@@ -64,9 +64,7 @@ function LoginForm() {
                         <input class="search-input" placeholder="search"></input> 
                         <BsSearch className="search-icon"/>
                    </li>
-                   <li className="rrr"><NavLink className="navbar-band" to="/Cities"  style={{paddingRight:"0px"}}>Location</NavLink>
-                        <FaMapMarkerAlt style={{background:"none",color:"#e9ecef",paddingLeft:"0px"}} className="search-icon"/>
-                    </li>
+                   
                 </ul>   
 
             </nav>

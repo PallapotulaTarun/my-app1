@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
-import "./SeatSelection.css"; // Import your CSS file
+import React, { useState, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import "./SeatSelection.css"; 
+import {NavLink} from "react-router-dom";
 
 const SeatSelection = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [seatCategories, setSeatCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All"); // Default to "All" category
-  const [selectedSlot, setSelectedSlot] = useState("11am"); // Default to "11am" slot
+  const [selectedCategory, setSelectedCategory] = useState("All"); 
+  const [selectedSlot, setSelectedSlot] = useState("11am"); 
   const [nextButtonEnabled, setNextButtonEnabled] = useState(true);
   const [showSeatNumbers, setShowSeatNumbers] = useState({});
   const [totalAmount, setTotalAmount] = useState(0);
 
-  // Define the price for each category
+  
   const categoryPrices = {
     Balcony: 700,
     Gold: 500,
@@ -88,14 +90,14 @@ const SeatSelection = () => {
     });
 
     // Check if all required fields are filled
-    const allFieldsFilled =
-      formData.name.trim() !== "" &&
-      formData.email.trim() !== "" &&
-      formData.date.trim() !== "" &&
-      selectedSlot !== "" &&
-      // Check if at least one seat is selected
+    // const allFieldsFilled =
+    //   formData.name.trim() !== "" &&
+    //   formData.email.trim() !== "" &&
+    //   formData.date.trim() !== "" &&
+    //   selectedSlot !== "" &&
+    //   // Check if at least one seat is selected
 
-    // Enable the "Book Ticket" button if all fields are filled
+    // // Enable the "Book Ticket" button if all fields are filled
     setNextButtonEnabled(true);
   };
 
@@ -110,26 +112,24 @@ const SeatSelection = () => {
     date: "",
   });
 
+  const componentRef=useRef();
+  const handlePrint= useReactToPrint({
+    content: ()=> componentRef.current,
+});
+
   const [showTicketDetails, setShowTicketDetails] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to control ticket details display
-  const handlePrintTicket = () => {
-    const printContent = document.querySelector(".ticket-details"); // Select the element to print
-    const originalDocument = document.body.innerHTML; // Store the original document content
-    document.body.innerHTML = printContent.innerHTML; // Set the document content to the ticket details
-    window.print(); // Trigger the print dialog
-    document.body.innerHTML = originalDocument; // Restore the original document content
-  };
+  
   
 
   return (
     <div>
-      <div className="header">
+      <div className="header" to="/home">
         
           <h3>ChalCinema </h3>
       </div>
-      <div>
-        <button className="back-butn">Back</button>
-      </div>
+      <li className="right-btn"><NavLink className="navbar-band" to="/Home" style={{color:"#495057",paddingTop:"10px"}}>Logout</NavLink></li>
+      
 
       <div className="seat-selection-container">
         <h1>Seat Selection</h1>
@@ -248,7 +248,7 @@ const SeatSelection = () => {
         )}
         
         {showTicketDetails && (
-          <div className="ticket-details">
+          <div className="ticket-details" ref={componentRef} >
             <h2>Your Ticket Details</h2>
             <p>Name: {formData.name}</p>
             <p>Email: {formData.email}</p>
@@ -267,11 +267,14 @@ const SeatSelection = () => {
               })}
             </ul>
             <p>Total Amount: ${totalAmount}</p>
-            <button onClick={handlePrintTicket} className="print-button">
-      Print Ticket
-    </button>
+            
           </div>
         )}
+      </div>
+      <div className="text-center">
+      <button onClick={handlePrint} className="print-button" >
+      Print Ticket
+    </button>
       </div>
 
       <div className="footer">

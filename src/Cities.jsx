@@ -38,9 +38,8 @@ export default function Cities() {
           {rowCities.map((city, index) => (
             <div className="city-block" key={index}>
               <button
-                className={`city-button ${
-                  selectedCity === city ? "clicked" : ""
-                }`}
+                className={`city-button ${selectedCity === city ? "clicked" : ""
+                  }`}
                 onClick={() => handleCityClick(city)}
               >
                 {city}
@@ -64,23 +63,7 @@ export default function Cities() {
                 Chalo Cinema
               </NavLink>
             </li>
-            <li className="rrr">
-              <NavLink
-                className="navbar-band"
-                to="/Cities"
-                style={{ paddingRight: "0px" }}
-              >
-                Location
-              </NavLink>
-              <FaMapMarkerAlt
-                style={{
-                  background: "none",
-                  color: "#e9ecef",
-                  paddingLeft: "0px",
-                }}
-                className="search-icon"
-              />
-            </li>
+           
             <li className="wrapper">
               <input className="search-input" placeholder="search"></input>
               <BsSearch className="search-icon" />
