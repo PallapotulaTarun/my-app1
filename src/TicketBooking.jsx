@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import "./SeatSelection.css"; 
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const SeatSelection = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -75,7 +75,7 @@ const SeatSelection = () => {
   };
 
   const handleNextButtonClick = () => {
-    // Toggle the state to show or hide ticket details
+    
     if (selectedSeats.length > 0 && formData.name.trim() !== "" && formData.email.trim() !== "" && formData.date.trim() !== "" && selectedSlot !== "") {
       setShowSuccessPopup(true); // Show the success popup
       setShowTicketDetails(true); // Show the ticket details
@@ -111,6 +111,12 @@ const SeatSelection = () => {
     email: "",
     date: "",
   });
+
+  const nav = useNavigate();
+  const print=()=>{
+    localStorage.setItem('user',JSON.stringify(formData))
+    nav('/TicketTemplate')
+  }
 
   const componentRef=useRef();
   const handlePrint= useReactToPrint({
@@ -247,6 +253,11 @@ const SeatSelection = () => {
           </div>
         )}
         
+        {/* const ticket = {
+          movie : 
+        } */}
+
+
         {showTicketDetails && (
           <div className="ticket-details" ref={componentRef} >
             <h2>Your Ticket Details</h2>
@@ -272,8 +283,8 @@ const SeatSelection = () => {
         )}
       </div>
       <div className="text-center">
-      <button onClick={handlePrint} className="print-button" >
-      Print Ticket
+      <button onClick={print} className="print-button" >
+      Print 
     </button>
       </div>
 

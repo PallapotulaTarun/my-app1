@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaFacebookSquare, FaInstagram, FaTwitterSquare, FaYoutube } from "react-icons/fa";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const MovieDisplay = () => {
   const [listdata, setListData] = useState([]);
@@ -125,10 +126,12 @@ const MovieDisplay = () => {
     setNewMovie({ ...newMovie, [name]: value });
   };
 
+  const nav = useNavigate();
+
   return (
     <div>
       {renderdata()}
-      <button className="btn-btn-primary"  onClick={handleAddMovie}>
+      <button className="btn-btn-primary"  onClick={()=>nav('/add')}  >
         Add Movie
       </button>
       {showModal && (

@@ -42,7 +42,7 @@ function LoginForm() {
         if (response.ok) {
           // If the login is successful, set loggedIn to true
           setLoggedIn(true);
-          localStorage.setItem("user",JSON.stringify());
+          localStorage.setItem("email",JSON.stringify(email));
         } else {
           // If the login fails, display an error message
           setError('Invalid email or password');

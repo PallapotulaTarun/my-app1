@@ -20,6 +20,7 @@ import AdminProfile from './AdminProfile';
 import AdminViewTicket from './AdminViewTicket';
 import PrintTicketDetails from './PrintTicketDetails';
 import AddMovie from './Addmovie';
+import TicketTemplate from './TicketTemplate';
 function App() {
   return (
     <div>
@@ -40,6 +41,7 @@ function App() {
         <Route path="/AdminViewTicket" element={<AdminViewTicket />}></Route>
         <Route path="/PrintTicketDetails" element={<PrintTicketDetails/ >}></Route>
         <Route path="/add" element={<AddMovie/ >}></Route>
+        <Route path="/TicketTemplate" element={<TicketTemplate/ >}></Route>
 
       </Routes>
     </div>

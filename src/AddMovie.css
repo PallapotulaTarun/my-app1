@@ -1,0 +1,54 @@
+.m {
+ 
+  
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.m1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Add {
+  grid-column: span 2;
+}
+
+button {
+  background-color: rgb(255, 0, 51);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 25%;
+}
+
+button:hover {
+  background-color: #ec0c0c;
+}

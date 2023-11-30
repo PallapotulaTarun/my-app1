@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -6,6 +7,13 @@ import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MovieDisplay = ({ listdata }) => {
+
+  const  click = async (id)=>{
+    let r = await axios.get(`https://localhost:44360/api/Movie/${id}`)
+    console.log(r.data);
+    localStorage.setItem('movie',JSON.stringify(r.data))
+  }
+
   const renderdata = () => {
     if (listdata && listdata.length > 0) {
       return listdata.map((Movie) => (
@@ -23,7 +31,7 @@ const MovieDisplay = ({ listdata }) => {
               <p style={{paddingRight:"30px"}}>Location: {Movie.location}</p>
               <p style={{paddingLeft:"40px"}}>Rating: {Movie.rating}</p>
               </div >
-                <Link to={'/Book'} className="card-btn">
+                <Link to={'/Book'} className="card-btn" onClick={()=>click(Movie.movieId)} >
                    Book Movie
                 </Link>
             </div>

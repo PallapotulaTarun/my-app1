@@ -1,7 +1,6 @@
 
 import { BsSearch } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitterSquare } from "react-icons/fa";
