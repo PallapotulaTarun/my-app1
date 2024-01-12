@@ -464,6 +464,42 @@ li{
   border-radius: 10px;
   margin-right: 50%;
 }
+@media only screen and (max-width: 768px) {
+  .form,
+  .form-group {
+    width: 90%;
+  }
+
+  .form-body {
+    padding: 10px;
+  }
+
+  .form__label,
+  .form_input {
+    width: 100%;
+  }
+
+  .card-container {
+    width: 90%;
+  }
+
+  .details,
+  .book-box {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .recom-img {
+    margin: 5px 0 0 10px;
+    flex-wrap: wrap;
+  }
+  
+  .recom-img img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+}
 
 
 
